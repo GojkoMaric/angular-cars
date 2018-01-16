@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class CarServiceService {
   private cars;
+  private idCount;
+  private newCar={};
 
   constructor() {
     this.cars = [
@@ -44,6 +46,10 @@ export class CarServiceService {
     return this.cars;
   }
 
+  // public addCar(newCar){
+  //   this.newCar.push.cars;
+  //   this.idCount++;
+  // }
   
 
 }

@@ -1,0 +1,65 @@
+<form (ngSubmit)='submitCar(newCar)'>
+  <div class="form-group">
+    <label for="mark">Mark</label>
+    <input [(ngModel)]="newCar.mark" type="text" class="form-control" name='carMark' placeholder="Mark">
+  </div>
+  <div class="form-group">
+    <label for="model">Model</label>
+    <input [(ngModel)]="newCar.model" type="text" class="form-control"  placeholder="Model">
+  </div>
+  <div class="form-group">
+    <label [(ngModel)]="newCar.year" for="year" placeholder="Year">Year</label>
+    <select class="form-control">
+      <option *ngFor= 'let year of years' [value]='year'>{{year}}</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="maxSpeed">Max speed</label>
+    <input [(ngModel)]="newCar.maxSpeed" type="number" class="form-control"  placeholder="Max speed">
+  </div>
+  <div class="form-group">
+    <label for="numberOfDoors">Number of doors</label>
+    <input [(ngModel)]="newCar.numberOfDoors" type="number" class="form-control"  placeholder="Number of doors">
+  </div>
+  <div class="col-auto">
+    <div class="form-check mb-2">
+      <input [(ngModel)]="newCar.isAutomatic" class="form-check-input" type="checkbox">
+      <label class="form-check-label" for="autoSizingCheck">
+        Is automatic
+      </label>
+    </div>
+  </div>
+  <fieldset class="form-group">
+    <div class="row">
+      <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
+      <div class="col-sm-10">
+        <div class="form-check">
+          <input [(ngModel)]="newCar.engine" class="form-check-input" type="radio" name="gridRadios" value="Diesel" checked>
+          <label class="form-check-label" for="gridRadios1">
+            Diesel
+          </label>
+        </div>
+        <div class="form-check">
+          <input [(ngModel)]="newCar.engine" class="form-check-input" type="radio" name="gridRadios" value="Petrol">
+          <label class="form-check-label" for="gridRadios2">
+            Petrol
+          </label>
+        </div>
+        <div class="form-check">
+          <input [(ngModel)]="newCar.engine" class="form-check-input" type="radio" name="gridRadios" value="Electric">
+          <label class="form-check-label" for="gridRadios3">
+            Electric
+          </label>
+        </div>
+        <div class="form-check">
+          <input [(ngModel)]="newCar.engine" class="form-check-input" type="radio" name="gridRadios" value="Hybrid">
+          <label class="form-check-label" for="gridRadios3">
+            Hybrid
+          </label>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+  <button type="submit" class="btn btn-primary">Submit</button>
+
+</form>
